@@ -643,8 +643,9 @@ def p_emu(b):
     b.para("ディスクドライブのある機種（HB-F1XD など）で <b>-diska フォルダ名</b>（か .dsk ファイル）を付けると、そこがフロッピーディスクになり、"
            "EDIT とトーナメントを保存できます（付けなくても遊べます）。")
     b.head("WebMSX（ブラウザー）")
-    b.bullets(["GitHub のリポジトリ（github.com/1re1/Baseball）の README にある「WebMSX で MSX STADIUM を遊ぶ」のリンクを開くと、"
-               "ROM と保存用の空のディスクを読み込んですぐ始まります",
+    b.bullets(["GitHub のリポジトリ（github.com/1re1/Baseball）の README にある「WebMSX（C-BIOS 版）で MSX STADIUM を遊ぶ」のリンクを開くと、"
+               "WebMSX の C-BIOS 版（webmsx.org/cbios/）が ROM を読み込んですぐ始まります（C-BIOS 版はディスクがないので保存できません）",
+               "保存もしたいときは「ディスク付きで遊ぶ」のリンクで、ROM と保存用の空のディスクを読み込みます",
                "ROM ファイルを WebMSX の画面にドラッグ＆ドロップしても遊べます",
                "WebMSX は ASCII8 と判定しますが、そのまま動きます",
                "ドラッグ＆ドロップで始めたときは、保存する前に画面下のディスクのアイコン（Drive A）から空のディスクを入れてください",
