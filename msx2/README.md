@@ -14,8 +14,10 @@ MSX2 用の野球ゲームです。
 - **openMSX**：`openmsx -machine Panasonic_FS-A1 -cart MSXSTADIUM.ROM`（自動で ASCII16 と判定されます）。
   保存するときは、ディスクドライブのある機種で `openmsx -machine Sony_HB-F1XD -cart MSXSTADIUM.ROM -diska フォルダ名`
   （フォルダか .dsk ファイルがディスクになり、`MSXSTAD.DAT` が書かれます）
-- **WebMSX**：ROM を読み込むだけ（WebMSX は ASCII8 と判定しますが、そのまま動きます）。
-  WebMSX の初期設定はドライブ A にディスクが入っていないので、保存するときは先に画面下のディスクのアイコン（Drive A）から
+- **WebMSX**：[このリンク](https://webmsx.org/?MACHINE=MSX2PJ&ROM_FORMAT=ASCII16&ROM=https://raw.githubusercontent.com/1re1/Baseball/main/msx2/MSXSTADIUM.ROM&DISK=https://raw.githubusercontent.com/1re1/Baseball/main/msx2/save.dsk)を開くだけで、GitHub の ROM と保存用の空のディスク（`save.dsk`）を読み込んで始まります
+  （`ROM=` に ROM の URL、`DISK=` にディスクイメージの URL、`MACHINE=MSX2PJ` で MSX2+ 日本版、`ROM_FORMAT=ASCII16` でメガROM の種類）。
+  ROM ファイルを WebMSX の画面にドラッグ＆ドロップしても遊べます（WebMSX は ASCII8 と判定しますが、そのまま動きます）。
+  ドラッグ＆ドロップで始めたときはドライブ A にディスクが入っていないので、保存するときは先に画面下のディスクのアイコン（Drive A）から
   空のディスクを入れてください（「Add Blank Disk」など。入れずに保存すると「ディスク ニ セーブ デキマセン」と出ます。後から入れれば保存できます）
 - **blueMSX**：ROM を読み込むだけ。うまく動かないときはマッパーを「ASCII16」にしてください
 - **実機**：メガROM が使えるカートリッジ（Carnivore2、MegaFlashROM など）に ASCII16 として書き込みます
@@ -216,6 +218,7 @@ python build.py        # → MSXSTADIUM.ROM
 python test/stats.py   # openMSX でデモ試合を回して成績を集計
 ```
 
+- `save.dsk`：WebMSX で保存するための空のディスク（720KB、openMSX の diskmanipulator で作成。中身はファイルなし）
 - `tools/`：絵（球場・フォント・スプライト・スコアボードの背景）、曲、チームを作る Python
 - `src/`：C（SDCC 4.2）とアセンブラ。`boot/boot.asm`（sjasmplus）が起動部
 - 仕組み：起動時にプログラムを RAM（4000h〜EFFFh）へ写して実行し、絵・曲・球場の地図はバンク 4〜 から読みます。
