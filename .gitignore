@@ -1,0 +1,8 @@
+# ビルドの途中生成物（python msx2/build.py で作り直せる）
+msx2/build/
+__pycache__/
+*.pyc
+# 配布用の圧縮ファイルと手元のコピー
+*.zip
+msx2/MSXSTADIUM - コピー.ROM
+msx2/MSXSTD.ROM
